@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Demo: prompt()</h1>
+<button onclick="myinput()">Click to enter your name</button>
+<p id="msg">hello world</p>
+<script>
+function myinput(){
+var name = prompt("Enter Your Name:");
+if (name == null || name == "") {
+document.getElementById("msg").innerHTML = "You did not entert anything. Please
+enter your name again";
+}
+else
+{
+document.getElementById("msg").innerHTML = "You enterted: " + name;
+}
+}
+</script>
+</body>
+</html></html>

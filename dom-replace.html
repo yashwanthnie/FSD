@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>DOM - Replace Element</title>
+</head>
+
+<body>
+
+    <div id="theDiv">
+
+        <h1>Hello, World!</h1>
+
+        <p id="one">This is text from paragraph 1</p>
+
+        <p id="two">This is text from paragraph 2</p>
+
+        <p id="four">This is text from paragraph 4</p>
+
+        <button onclick="repl(document.getElementById('two'))">
+            Click to replace p2
+        </button>
+
+    </div>
+
+
+    <script>
+
+        function repl(element) {
+
+            // Create a new paragraph
+            var para = document.createElement("p");
+
+            // Create text for the new paragraph
+            var node = document.createTextNode("This is a new paragraph!");
+
+            // Put the text inside the paragraph
+            para.appendChild(node);
+
+            // Replace the old paragraph with the new paragraph
+            element.parentNode.replaceChild(para, element);
+        }
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript example</title>
+</head>
+<body>
+    <h1>Demo:prompt()</h1>
+    <button onclick="myinput()">click to enter your name</button>
+    <p id="msg">hello world</p>
+
+    <script>
+        function myinput(){
+            var name=prompt("Enter your name:");
+            if(name==null || name==""){
+                document.getElementById("msg").innerHTML="you did not enter anything.please enter your name again";
+            }
+
+            else{
+                document.getElementById("msg").innerHTML="you entered:"+name;
+                        }
+                    }
+    </script>

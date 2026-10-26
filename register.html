@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+
+    <style>
+        body {
+            background-color: lightblue;
+            font-family: Arial;
+            text-align: center;
+        }
+
+        form {
+            background-color: white;
+            width: 400px;
+            margin: 50px auto;
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        h2 {
+            color: blue;
+        }
+
+        input, select {
+            width: 90%;
+            padding: 8px;
+            margin: 6px;
+        }
+
+        label {
+            color: darkblue;
+            font-weight: bold;
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+
+        input[type="submit"] {
+            background-color: green;
+            color: white;
+            width: 100px;
+            border: none;
+            padding: 10px;
+        }
+
+        input[type="reset"] {
+            background-color: red;
+            color: white;
+            width: 100px;
+            border: none;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form id="registrationForm">
+
+        <h2>Yashwanth M 4NI25CS430</h2>
+
+        <!-- Username -->
+        <div class="form-group">
+            <label>Username:</label><br>
+
+            <input type="text"
+                   placeholder="Enter your name"
+                   id="username"
+                   required>
+
+            <br>
+
+            <span id="usernameerror" class="error"></span>
+        </div>
+
+
+        <!-- Email -->
+        <div class="form-group">
+            <label>Email:</label><br>
+
+            <input type="email"
+                   placeholder="Enter your email"
+                   id="email"
+                   required>
+
+            <br>
+
+            <span id="emailerror" class="error"></span>
+        </div>
+
+
+        <!-- Mobile Number -->
+        <div class="form-group">
+            <label>Mobile Number:</label><br>
+
+            <input type="tel"
+                   placeholder="Enter mobile number"
+                   id="mobilenumber"
+                   required>
+
+            <br>
+
+            <span id="mobilenumbererror" class="error"></span>
+        </div>
+
+
+        <!-- Password -->
+        <div class="form-group">
+            <label>Password:</label><br>
+
+            <input type="password"
+                   placeholder="Enter password"
+                   id="password"
+                   required>
+
+            <br>
+
+            <span id="passworderror" class="error"></span>
+        </div>
+
+
+        <!-- Confirm Password -->
+        <div class="form-group">
+            <label>Confirm Password:</label><br>
+
+            <input type="password"
+                   placeholder="Confirm password"
+                   id="confirmpassword"
+                   required>
+
+            <br>
+
+            <span id="confirmpassworderror" class="error"></span>
+        </div>
+
+
+        <!-- Branch -->
+        <div class="form-group">
+            <label>Branch:</label><br>
+
+            <select id="branch" required>
+                <option value="">Select Branch</option>
+                <option value="CSE">CSE</option>
+                <option value="ISE">ISE</option>
+                <option value="AI">AI</option>
+                <option value="ME">ME</option>
+                <option value="EC">EC</option>
+                <option value="EEE">EEE</option>
+                <option value="CI">CI</option>
+            </select>
+
+            <br>
+
+            <span id="brancherror" class="error"></span>
+        </div>
+
+
+        <!-- Profile Picture -->
+        <div class="form-group">
+            <label>Profile Picture:</label><br>
+
+            <input type="file"
+                   id="profilepicture"
+                   accept="image/*">
+
+            <br>
+
+            <span id="profilepictureerror" class="error"></span>
+        </div>
+
+
+        <!-- Register Button -->
+        <div class="form-group">
+            <input type="submit" value="Register">
+        </div>
+
+
+        <!-- Reset Button -->
+        <div class="form-group">
+            <input type="reset" value="Reset">
+        </div>
+
+    </form>
+
+
+    <script>
+
+        document.getElementById("registrationForm")
+        .addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+
+            // Get values
+            let username =
+                document.getElementById("username").value.trim();
+
+            let email =
+                document.getElementById("email").value.trim();
+
+            let mobilenumber =
+                document.getElementById("mobilenumber").value.trim();
+
+            let password =
+                document.getElementById("password").value.trim();
+
+            let confirmpassword =
+                document.getElementById("confirmpassword").value.trim();
+
+            let branch =
+                document.getElementById("branch").value;
+
+
+            // Get error elements
+            let usernameerror =
+                document.getElementById("usernameerror");
+
+            let emailerror =
+                document.getElementById("emailerror");
+
+            let mobilenumbererror =
+                document.getElementById("mobilenumbererror");
+
+            let passworderror =
+                document.getElementById("passworderror");
+
+            let confirmpassworderror =
+                document.getElementById("confirmpassworderror");
+
+            let brancherror =
+                document.getElementById("brancherror");
+
+
+            // Clear previous errors
+            usernameerror.textContent = "";
+            emailerror.textContent = "";
+            mobilenumbererror.textContent = "";
+            passworderror.textContent = "";
+            confirmpassworderror.textContent = "";
+            brancherror.textContent = "";
+
+
+            let isvalid = true;
+
+
+            // Username validation
+            if (username.length < 6) {
+
+                usernameerror.textContent =
+                    "Username must be at least 6 characters";
+
+                isvalid = false;
+            }
+
+
+            // Email validation
+            let emailPattern =
+                /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (!emailPattern.test(email)) {
+
+                emailerror.textContent =
+                    "Enter a valid email address";
+
+                isvalid = false;
+            }
+
+
+            // Mobile number validation
+            let mobilePattern = /^\d{10}$/;
+
+            if (!mobilePattern.test(mobilenumber)) {
+
+                mobilenumbererror.textContent =
+                    "Mobile number must contain exactly 10 digits";
+
+                isvalid = false;
+            }
+
+
+            // Password validation
+            let passwordPattern =
+                /^(?=.*[A-Za-z])(?=.*\d).+$/;
+
+            if (!passwordPattern.test(password)) {
+
+                passworderror.textContent =
+                    "Password must contain letters and numbers";
+
+                isvalid = false;
+            }
+
+
+            // Confirm password validation
+            if (password !== confirmpassword) {
+
+                confirmpassworderror.textContent =
+                    "Passwords do not match";
+
+                isvalid = false;
+            }
+
+
+            // Branch validation
+            if (branch === "") {
+
+                brancherror.textContent =
+                    "Please select a branch";
+
+                isvalid = false;
+            }
+
+
+            // Final result
+            if (isvalid) {
+
+                alert("Registered successfully!");
+
+            }
+
+        });
+
+    </script>
+</body>
+</html>

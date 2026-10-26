@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>DOM Examples</title>
+</head>
+
+<body>
+
+    <h1 id="title">Hello World</h1>
+
+    <button id="changeBtn">Change Text</button>
+
+    <hr>
+
+    <h2>getElementsByTagName Example</h2>
+
+    <p>One</p>
+    <p>Two</p>
+    <p>Three</p>
+
+    <button id="colorBtn">Change First Paragraph Color</button>
+
+    <hr>
+
+    <h2>createElement Example</h2>
+
+    <button id="addBtn">Add New Paragraph</button>
+
+    <div id="container"></div>
+
+    <hr>
+
+    <h2>removeChild Example</h2>
+
+    <p id="demo">Delete me</p>
+
+    <button id="deleteBtn">Delete</button>
+
+
+    <script>
+
+        // 1. Change text and color
+        document.getElementById("changeBtn").addEventListener("click", function() {
+
+            document.getElementById("title").innerHTML = "Hello Yashwanth!";
+
+            document.getElementById("title").style.color = "red";
+
+        });
+
+
+        // 2. getElementsByTagName
+        document.getElementById("colorBtn").addEventListener("click", function() {
+
+            let x = document.getElementsByTagName("p");
+
+            x[0].style.color = "blue";
+        });
+
+
+        // 3. createElement and appendChild
+        document.getElementById("addBtn").addEventListener("click", function() {
+
+            let p = document.createElement("p");
+
+            let text = document.createTextNode("Hello DOM");
+
+            p.appendChild(text);
+
+            document.getElementById("container").appendChild(p);
+
+        });
+
+
+        // 4. Delete an element
+        document.getElementById("deleteBtn").addEventListener("click", function() {
+
+            let p = document.getElementById("demo");
+
+            p.parentNode.removeChild(p);
+
+        });
+
+    </script>
+
+</body>
+
+</html>
+

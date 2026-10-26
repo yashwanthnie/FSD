@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Html Tag</title>
+</head>
+<body>
+
+
+<!-- <center>Time table</center>
+<table border="1" width="100%" color="black">
+    <tr>
+        <th>DAYS</th>
+        <th>9.00 to 10.00</th>
+        <th>10.00 to 11.00</th>
+        <th rowspan="6">Break</th>
+        <th>11.30 to 12.30</th>
+        <th>12.30 to 1.30</th>
+        <th rowspan="6">Lunch</th>
+        <th>2.30 to 3.30</th>
+        <th>3.30 to 4.30</th>
+        <th>4.30 to 5.30</th>
+    </tr>
+
+    <tr>
+    <td>MONDAY</td>
+        <td>SEPM</td>
+        <td>RM</td>
+        <td>ATC</td>
+        <td>CN</td>
+        <td colspan="2">D3 CN LAB D1 FSD LAB</td>
+            <TD>NSS/PE</TD>
+    </tr>
+
+    <tr>
+        <td>TUESDAY</td>
+        <td>CN</td>
+        <td>SEPM</td>
+        <td>FSD</td>
+        <TD>AI</TD>
+        <TD COLSPAN="2">D ATC TUTORIAL</TD>
+        <TD COLSPAN="1"></TD>
+    </tr>
+
+
+    <TR>
+        <td>WEDNESDAY</td>
+        <td>RM</td>
+        <td>FSD</td>
+        <td>AI</td>
+        <TD>SEPM</TD>
+        <td>ATC</td>
+        <TD COLSPAN="1">
+            <TD>NSS/PE</TD>
+
+
+            <tr>
+                <TD>THURSDAY</TD>
+                <td colspan="2">D1 CN LAB D2 FSD LAB</td>
+                <td>CN</td>
+                <td>FSD</td>
+                <TD COLSPAN="2">PROCTOR INTERACTION</TD>
+                <TD COLSPAN="1"></TD>
+    </TR>
+
+    <TR>
+        <td>FRIDAY</td>
+        <td>AI</td>
+        <td>ATC</td>
+        <TD colspan="2">D2 CN LAB D3 FSD LAB</TD>
+        <TD COLSPAN="2">PROJECT PROGRESS REVIEW</TD>
+        <TD COLSPAN="1"></TD>
+    </TR>
+    </table>
+
+
+
+<style>
+    Body{
+TEXT-ALIGN: center;
+    } -->
+<!-- </style> -->
+<div class="container">
+    
+    <form>
+    <h1>Login page</h1>
+    <input type="text" placeholder="Enter username" id="username" required><br> <br>
+    <input type="password" placeholder="Enter password" id="password" required><br><br>
+    <input type="submit" name="submit" id="submit"><br> <br>
+</form>
+</div>
+<script>
+        document.getElementById("submit").addEventListener("click", function(event) {
+            event.preventDefault();
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            if (username === "yashwanthm" && password === "123") {
+                alert("Login successful");
+            } else {
+                alert("Login failed");
+            }
+        });
+    </script>
+
+<style>
+    .container {
+        border:2px solid black;
+        margin-left: 40%;
+        width: 300px;
+        height: 500px;
+        border-radius: 10px;
+        text-align: center;
+    }
+</style>
+</body>
+</html>

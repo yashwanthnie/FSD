@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Example</title>
+</head>
+<body>
+
+<script>
+    const user_username = "yashwanthm";
+    const Pass_password = "123";
+
+    function logincheck() {
+        let logedIn = false;
+
+        while (!logedIn) {
+            const username = prompt("Enter username:");
+            const password = prompt("Enter password:");
+
+            if (username == user_username && password == Pass_password) {
+                alert("Successful login");
+                logedIn = true;
+            } else {
+                alert("Login failed");
+            }
+        }
+    }
+
+    logincheck();
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <p id="msg"></p>
+
+    <script>
+        // MAP example
+        let number = [1, 2, 3, 4, 5];
+
+        let result = number.map(x => x * 2);
+
+        document.getElementById("msg").innerHTML = result;
+
+
+        // Product array
+        const product = [
+            {
+                id: 1,
+                name: "pen",
+                price: 10,
+                category: "Stationary"
+            },
+
+            {
+                id: 2,
+                name: "notebook",
+                price: 30,
+                category: "Stationary"
+            },
+
+            {
+                id: 3,
+                name: "milk",
+                price: 40,
+                category: "Diary"
+            }
+        ];
+
+
+        // MAP - get IDs
+        const id = product.map(p => p.id);
+
+        document.getElementById("msg").innerHTML = id;
+
+
+        // // FILTER - products with price greater than 20
+        // const cost = product.filter(p => p.price > 20);
+
+        // document.getElementById("msg").innerHTML = JSON.stringify(cost);
+
+
+        // // REDUCE - calculate total price
+        // const totalall = product.reduce((acc, p) => acc + p.price, 0);
+
+        document.getElementById("msg").innerHTML = totalall;
+    </script>
+
+</body>
+</html>
+
